@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KaiSpan - KI-Betriebsassistent für Gastronomie und Handel</title>
+    <meta name="description" content="KaiSpan hilft Restaurants, Supermärkten und Food-Retailern, Lieferanten, Bestellungen, Rechnungen, Lagerbestände und tägliche Aufgaben klar zu organisieren.">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css?v=29">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="KaiSpan home">
+        <span class="logo-mark-css" aria-hidden="true"></span>
+        <span>KaiSpan</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#opening" data-i18n="navOpening">Opening Guide</a>
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#pricing" data-i18n="navPricing">Pricing</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <select id="language" aria-label="Language">
+          <option value="zh">中文</option>
+          <option value="de" selected>Deutsch</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="vi">Tiếng Việt</option>
+        </select>
+        <a class="btn btn-primary" href="#register" data-i18n="register">免费注册</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-i18n="menuToggle">菜单</button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#opening" data-i18n="navOpening">Opening Guide</a>
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#pricing" data-i18n="navPricing">Pricing</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+        <a class="btn btn-primary" href="#register" data-i18n="register">免费注册</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="position">餐饮与零售企业的 AI 运营助手</p>
+          <h1 data-i18n="heroTitle">餐馆每天最乱的事，KaiSpan 帮你整理清楚。</h1>
+          <p class="hero-sub" data-i18n="heroSub">订货、库存、账单、卫生检查、开店收店任务和经营数据，都可以从 KaiSpan Base 免费开始。</p>
+          <p class="ai-line" data-i18n="heroAi">不用翻账单和报表，直接问 KaiSpan：哪里涨价了，哪张账单异常，为什么成本变高。</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#base" data-i18n="heroCta">免费使用 KaiSpan Base</a>
+            <a class="btn btn-secondary" href="#features" data-i18n="demoCta">查看功能</a>
+            <a class="btn btn-secondary" href="#opening" data-i18n="openingCta">我准备开店</a>
+          </div>
+        </div>
+        <article class="hero-dashboard-ui" aria-label="KaiSpan operations overview">
+          <div class="hero-dash-head">
+            <div>
+              <span data-dashboard="date">2026年 5月</span>
+              <strong data-dashboard="title">运营总览</strong>
+            </div>
+            <em data-dashboard="live">实时</em>
+          </div>
+          <div class="hero-dash-grid">
+            <section class="dash-panel alert-panel">
+              <h3 data-dashboard="pending">待处理提醒</h3>
+              <div class="dash-row"><span>!</span><div><strong data-dashboard="haccp">HACCP 检查未完成</strong><small data-dashboard="haccpSub">2 项检查待完成</small></div></div>
+              <div class="dash-row"><span>i</span><div><strong data-dashboard="staff">员工 Belehrung 即将到期</strong><small data-dashboard="staffSub">3 名员工 · 7 天后到期</small></div></div>
+              <div class="dash-row"><span>↗</span><div><strong data-dashboard="visa">1名员工签证 14天后到期</strong><small data-dashboard="visaSub">请及时办理续签</small></div></div>
+            </section>
+            <section class="dash-panel order-panel">
+              <h3 data-dashboard="order">订货提醒</h3>
+              <div class="supplier-row"><b>Fresh</b><div><strong data-dashboard="order1">周三 16:00 前下单</strong><small data-dashboard="supplier1">FreshFoods GmbH</small><em data-dashboard="tag1">水果 · 蔬菜 · 肉类</em></div></div>
+              <div class="supplier-row"><b>Drink</b><div><strong data-dashboard="order2">周五 11:00 前下单</strong><small data-dashboard="supplier2">Getränke Partner</small><em data-dashboard="tag2">饮料 · 啤酒 · 酒水</em></div></div>
+            </section>
+            <section class="dash-panel invoice-panel">
+              <h3 data-dashboard="invoices">问题账单</h3>
+              <div class="invoice-row"><span>!</span><div><strong>Rechnung #240518</strong><small data-dashboard="inv1">与 Lieferschein 数量不一致</small></div></div>
+              <div class="invoice-row"><span>!</span><div><strong>Rechnung #240521</strong><small data-dashboard="inv2">与订单金额不一致</small></div></div>
+            </section>
+            <section class="dash-panel price-panel">
+              <h3 data-dashboard="prices">供应商价格变化</h3>
+              <div class="price-head"><span data-dashboard="product">商品</span><span data-dashboard="current">当前价格</span><span data-dashboard="change">变化</span></div>
+              <div class="price-row"><b>🥚</b><span data-dashboard="eggs">鸡蛋 30枚</span><strong>€4.20</strong><em class="up">+4.2%</em></div>
+              <div class="price-row"><b>🥤</b><span data-dashboard="cola">可口可乐</span><strong>€12.50</strong><em>-2.8%</em></div>
+            </section>
+          </div>
+          <div class="hero-dash-assistant">
+            <span>AI</span>
+            <p><strong data-dashboard="bot">您好！我是 KaiSpan 智能助手，</strong><small data-dashboard="bot2">如需帮助，请随时问我。</small></p>
+          </div>
+        </article>
+        <div class="hero-values">
+          <span>采购更清楚</span>
+          <span>账单更省心</span>
+          <span>运营更有序</span>
+        </div>
+      </section>
+
+      <section class="free-strip" id="base">
+        <div>
+          <p class="eyebrow">KaiSpan Base</p>
+          <h2 data-i18n="baseTitle">KaiSpan Base 永久免费</h2>
+          <p data-i18n="baseSub">不用换供应商，不用换收银系统，不用绑定合同。先免费整理你的供应商、常买商品、订单和账单。</p>
+        </div>
+        <div class="price-badge">
+          <strong>€0</strong>
+          <span>永久免费</span>
+        </div>
+        <ul class="compact-list">
+          <li>添加供应商</li><li>快速下单</li><li>每月 30 张账单识别</li><li>基础库存提醒</li><li>HACCP / 卫生提醒</li><li>基础采购统计</li>
+        </ul>
+        <a class="btn btn-primary" href="#register" data-i18n="baseCta">免费注册 KaiSpan Base</a>
+      </section>
+
+      <section class="section split-section">
+        <div class="section-copy">
+          <p class="eyebrow">Start without disruption</p>
+          <h2>不用换供应商，不用换 Kasse，不用一次性改变流程。</h2>
+          <p>KaiSpan 可以先从你现在已经在用的供应商、账单、订货方式和门店流程开始整理。</p>
+        </div>
+        <div class="card-grid three">
+          <article class="info-card"><strong>继续使用现有供应商</strong><p>你现在用谁供货，还可以继续用。KaiSpan 先帮你整理供应商、常买商品和订单记录。</p></article>
+          <article class="info-card"><strong>订单可以直接发给供货商</strong><p>在 KaiSpan 里整理好订单后，可通过 WhatsApp、Email 或 PDF 发给任何供货商，对方不用安装新系统。</p></article>
+          <article class="info-card"><strong>先免费整理，再逐步升级</strong><p>需要深度分析、自动对账、税务师资料包和多门店管理时，再升级。</p></article>
+        </div>
+      </section>
+
+      <section class="section steps">
+        <div class="section-heading">
+          <h2>3 分钟开始使用</h2>
+          <p>KaiSpan 不要求你一次性改变所有流程。先从最简单的日常动作开始。</p>
+        </div>
+        <div class="step-row">
+          <article><span>01</span><strong>添加一个供应商</strong><p>保存你常买的商品和基本采购信息。</p></article>
+          <article><span>02</span><strong>上传一张账单</strong><p>KaiSpan 识别供应商、金额、日期和 VAT。</p></article>
+          <article><span>03</span><strong>复制一次订单</strong><p>通过 Email / WhatsApp / PDF 发给供应商。</p></article>
+          <article><span>04</span><strong>查看基础统计</strong><p>知道本月买了什么、花了多少。</p></article>
+        </div>
+      </section>
+
+      <section class="section assistant-teaser">
+        <div class="chat-window">
+          <div class="chat-title" data-i18n="kaiName">Kai</div>
+          <div class="bubble owner">为什么这周饮料供应商占比这么高？</div>
+          <div class="bubble ai">上周 Leergut 未及时退回，点击查看对应账单 Rechnung9283。</div>
+        </div>
+        <div class="section-copy">
+          <p class="eyebrow" data-i18n="kaiName">Kai</p>
+          <h2>不会查数据？直接问 KaiSpan。</h2>
+          <p>老板不需要挨个翻账单、库存表和报表。直接问 KaiSpan，它会从你的经营数据里帮你找答案。</p>
+          <a class="btn btn-secondary" href="#features" data-i18n="demoCta">查看功能</a>
+        </div>
+      </section>
+
+      <section class="section ai-roles" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">Four AI roles</p>
+          <h2>不是让你多学一个系统，而是多了 4 个 AI 助手。</h2>
+          <p>选择你最想解决的问题，KaiSpan 会带你进入对应的 AI 助手。</p>
+        </div>
+        <div class="role-list">
+          <article class="role-module compact-role" id="inventory" data-module="inventory">
+            <div class="role-copy">
+              <span class="role-person">Inventory Lead</span>
+              <h3 class="role-problem">订货太乱，库存看不清</h3>
+              <p class="role-title">库存订货助手</p>
+              <p>让订货、库存、价格和损耗都有记录、有提醒、有分析。</p>
+              <ul><li>添加现有供应商</li><li>复制历史订单</li><li>商品涨价提醒</li><li>AI 推荐供应商、产品或替代品</li></ul>
+              <button class="btn btn-secondary detail-toggle">View Details</button>
+            </div>
+            <div class="demo-panel" hidden>
+              <div class="demo-tabs">
+                <button class="active" data-title="快速订货 Demo" data-desc="从常买商品到一键重复下单，KaiSpan 让订货比翻 WhatsApp 更清楚。">快速订货</button>
+                <button data-title="库存提醒 Demo" data-desc="哪些货快没了，哪些货该补了，KaiSpan 提前提醒。">库存提醒</button>
+                <button data-title="价格与采购成本 Demo" data-desc="哪些产品涨价了，哪些供应商成本变化大，一眼看清。">价格与采购成本</button>
+                <button data-title="收货核对与损耗 Demo" data-desc="减少少送、错送、价格不一致和损耗不清楚的问题。">收货核对与损耗</button>
+              </div>
+              <h4>快速订货 Demo</h4>
+              <p>从常买商品到一键重复下单，KaiSpan 让订货比翻 WhatsApp 更清楚。</p>
+              <div class="video-box"><span>Coming Soon</span><button class="watch-demo" data-demo="快速订货 Demo">Watch Demo</button><small>2 min product walkthrough</small></div>
+            </div>
+            <div class="role-details" hidden>上传 Rechnung、Katalog、Lieferschein；记录 Artikelnummer、规格、历史价格、损耗和菜品成本；订单、账单、Lieferschein 未来可核对。</div>
+          </article>
+
+          <article class="role-module compact-role" id="finance" data-module="finance">
+            <div class="role-copy">
+              <span class="role-person">Finance Lead</span>
+              <h3 class="role-problem">账单太多，月底整理麻烦</h3>
+              <p class="role-title">财务账单助手</p>
+              <p>把散乱账单整理成老板看得懂、税务师用得上的财务资料。</p>
+              <ul><li>拍照上传账单</li><li>AI 识别金额与 VAT</li><li>缺失账单提醒</li><li>Steuerberater 资料包</li></ul>
+              <button class="btn btn-secondary detail-toggle">View Details</button>
+            </div>
+            <div class="demo-panel" hidden>
+              <div class="demo-tabs">
+                <button class="active" data-title="账单识别 Demo" data-desc="拍照上传账单，AI 自动识别金额、税率、供应商和日期。">账单识别</button>
+                <button data-title="账单查找与缺失提醒 Demo" data-desc="不用再翻邮箱、纸箱和 WhatsApp，账单在哪里一问就知道。">账单查找</button>
+                <button data-title="对账与付款状态 Demo" data-desc="哪些账单还没付，哪些付款对不上，KaiSpan 帮你整理出来。">对账与付款</button>
+                <button data-title="税务师资料包 Demo" data-desc="把散乱账单整理成税务师能用的月度资料包。">税务师资料包</button>
+                <button data-title="Kasse 与财务数据连接 Demo" data-desc="KaiSpan API 开放。这属于 Control / Advanced Feature。">Kasse / API</button>
+              </div>
+              <h4>账单识别 Demo</h4>
+              <p>拍照上传账单，AI 自动识别金额、税率、供应商和日期。</p>
+              <div class="video-box"><span>Upload / Embed URL placeholder</span><button class="watch-demo" data-demo="账单识别 Demo">Watch Demo</button><small>2 min product walkthrough</small></div>
+            </div>
+            <div class="role-details" hidden>支持 Rechnung/PDF/图片上传、按供应商和月份归档、VAT 月度概览、DATEV/CSV 导出。Kasse、银行 API 和自动对账标注为高级功能。</div>
+          </article>
+
+          <article class="role-module compact-role" id="store" data-module="store">
+            <div class="role-copy">
+              <span class="role-person">Store Ops Lead</span>
+              <h3 class="role-problem">卫生检查、员工任务、门店流程不标准</h3>
+              <p class="role-title">店铺运营助手</p>
+              <p>让门店每天的卫生、任务、员工反馈和运营流程更标准、更可追溯。</p>
+              <ul><li>卫生检查表</li><li>HACCP 监控</li><li>开店 / 收店任务</li><li>异常事件记录</li></ul>
+              <button class="btn btn-secondary detail-toggle">View Details</button>
+            </div>
+            <div class="demo-panel" hidden>
+              <div class="demo-tabs">
+                <button class="active" data-title="HACCP 与卫生检查 Demo" data-desc="卫生局会喜欢你，因为你的检查记录清清楚楚。">HACCP 与卫生检查</button>
+                <button data-title="开店收店任务 Demo" data-desc="每天该做什么、谁做了、谁没做，系统都有记录。">开店收店任务</button>
+                <button data-title="门店异常与反馈 Demo" data-desc="把门店每天发生的问题记录下来，老板不用只靠口头汇报。">门店异常与反馈</button>
+              </div>
+              <h4>HACCP 与卫生检查 Demo</h4>
+              <p>卫生局会喜欢你，因为你的检查记录清清楚楚。</p>
+              <div class="video-box"><span>Coming Soon</span><button class="watch-demo" data-demo="HACCP 与卫生检查 Demo">Watch Demo</button><small>2 min product walkthrough</small></div>
+            </div>
+            <div class="role-details" hidden>记录温度、清洁任务、Belehrung 到期、总部卫生检查反馈、加班理由、Gutschein 和多门店运营检查。</div>
+          </article>
+
+          <article class="role-module compact-role" id="analytics" data-module="analytics">
+            <div class="role-copy">
+              <span class="role-person">Analysis Lead</span>
+              <h3 class="role-problem">成本上涨、利润下降，不知道问题在哪里</h3>
+              <p class="role-title">经营分析助手</p>
+              <p>让老板不用凭感觉经营，而是看清成本、销量、评价、员工和供应商背后的变化。</p>
+              <ul><li>月度采购总览</li><li>供应商排行</li><li>AI 月度经营报告</li><li>经营异常提醒</li></ul>
+              <button class="btn btn-secondary detail-toggle">View Details</button>
+            </div>
+            <div class="demo-panel" hidden>
+              <div class="demo-tabs">
+                <button class="active" data-title="月度经营报告 Demo" data-desc="每个月自动整理采购、成本、供应商和异常变化。">月度经营报告</button>
+                <button data-title="成本与采购趋势 Demo" data-desc="看清哪些产品涨价、哪些商品用得太快、哪些成本在拖累利润。">成本与采购趋势</button>
+                <button data-title="门店表现与评论分析 Demo" data-desc="把营业额变化、评论变化和门店问题放在一起看。">门店表现</button>
+                <button data-title="行业趋势与战略建议 Demo" data-desc="不只是看自己门店，也看行业变化和下一步机会。">行业趋势</button>
+              </div>
+              <h4>月度经营报告 Demo</h4>
+              <p>每个月自动整理采购、成本、供应商和异常变化。</p>
+              <div class="video-box"><span>Upload / Embed URL placeholder</span><button class="watch-demo" data-demo="月度经营报告 Demo">Watch Demo</button><small>2 min product walkthrough</small></div>
+            </div>
+            <div class="role-details" hidden>包含采购趋势、供应商表现、损耗趋势、Google 评论分析、多门店对比、行业报告订阅和高级 Kontierung。</div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="section trust-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="trustEyebrow">真实经营场景</p>
+          <h2 data-i18n="trustTitle">为真实餐饮经营者设计</h2>
+          <p data-i18n="trustIntro">KaiSpan 来自真实餐饮和供应链运营场景，不是实验室里的软件。我们理解餐馆每天的订货、账单、库存、卫生检查、员工任务和供应商沟通到底有多乱。</p>
+          <p data-i18n="trustSub">KaiSpan 的目标不是让餐馆老板多学一个复杂系统，而是帮助老板、店长和采购负责人把每天已经在做的事情整理清楚。</p>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <strong data-i18n="trustCard1Title">真实餐饮场景</strong>
+            <p data-i18n="trustCard1Text">围绕餐馆每天真实发生的订货、账单、库存和门店任务设计。</p>
+          </article>
+          <article>
+            <strong data-i18n="trustCard2Title">为老板和店长设计</strong>
+            <p data-i18n="trustCard2Text">不是只给技术人员使用，而是让老板、店长和采购负责人都能看懂、会用。</p>
+          </article>
+          <article>
+            <strong data-i18n="trustCard3Title">从日常流程开始</strong>
+            <p data-i18n="trustCard3Text">先从一个供应商、一张账单、一笔订单开始，不要求一次性改变所有流程。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section opening opening-free" id="opening">
+        <div class="section-copy">
+          <p class="eyebrow">Free Opening Guide</p>
+          <h2>第一次开餐馆？别一个人摸索。</h2>
+          <p>免费的开店向导帮助准备入行的餐饮老板，把供应商方向、政府流程、财务税务准备和基础运营结构一步步理清楚。先免费开始，不需要更换供应商或 Kasse。</p>
+          <div class="button-row"><a class="btn btn-primary" href="#register">免费注册并启动开店向导</a></div>
+        </div>
+      </section>
+
+      <section class="section pricing" id="pricing">
+        <div class="section-heading">
+          <p class="eyebrow">Pricing</p>
+          <h2>大多数餐馆可以先用 Base 免费开始。</h2>
+          <p>KaiSpan Base 免费帮助你开始整理采购、账单、库存和门店运营。需要更深度分析、自动对账和税务师资料包时，可以升级。</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card highlight-free">
+            <span class="plan-label">永久免费基础版</span>
+            <h3>KaiSpan Base</h3>
+            <strong class="plan-price">€0</strong>
+            <p>免费开始整理。</p>
+            <ul><li>供应商与常买商品</li><li>快速下单</li><li>每月 30 张账单识别</li><li>基础库存提醒</li><li>HACCP / 开店收店任务</li><li>基础采购统计</li></ul>
+            <div class="full-list" hidden>上传 Katalog / Rechnung、复制历史订单、Email / WhatsApp / PDF 发送订单、订货提醒、基础卫生检查表、Belehrung 提醒、Gutschein 记录。</div>
+            <button class="text-button plan-toggle">查看完整功能</button>
+            <a class="btn btn-primary" href="#register">免费注册</a>
+          </article>
+          <article class="price-card recommended">
+            <span class="plan-label">Empfohlen / 推荐</span>
+            <h3>KaiSpan Pro</h3>
+            <strong class="plan-price">€49 <small>/ Monat pro Standort</small></strong>
+            <p>Early Access: €29 / Monat for first 6 months</p>
+            <ul><li>每月 150 张账单识别</li><li>价格变化提醒</li><li>供应商价格历史</li><li>库存消耗趋势</li><li>月度采购报告</li><li>AI 月度总结</li></ul>
+            <div class="full-list" hidden>Base 全部功能、缺货风险提醒、损耗分析、卫生记录导出、任务管理增强、经营建议、基础税务师资料整理。</div>
+            <button class="text-button plan-toggle">查看完整功能</button>
+            <a class="btn btn-primary" href="#register">开始 Pro 试用</a>
+          </article>
+          <article class="price-card">
+            <span class="plan-label">Advanced Feature</span>
+            <h3>KaiSpan Control</h3>
+            <strong class="plan-price">ab €99 <small>/ Monat pro Standort</small></strong>
+            <p>多门店与深度对账。</p>
+            <ul><li>订单 / Lieferschein / Rechnung 三方核对</li><li>银行 Kontoauszug 对账</li><li>Kasse 数据导入</li><li>Steuerberater 资料包</li><li>DATEV / CSV 导出</li><li>多门店对比</li></ul>
+            <div class="full-list" hidden>Pro 全部功能、缺失账单提醒、重复账单检测、Personalkosten 导入、Google Review 分析、税务师协作入口、高级经营报告。</div>
+            <button class="text-button plan-toggle">查看完整功能</button>
+            <a class="btn btn-secondary" href="#contact">了解 Control</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section why">
+        <div class="section-heading">
+          <p class="eyebrow">Why KaiSpan</p>
+          <h2>为什么选择 KaiSpan</h2>
+        </div>
+        <div class="reason-grid">
+          <article><strong>不强迫更换供应商</strong><p>继续使用现有供应商，KaiSpan 帮你把流程整理清楚。</p></article>
+          <article><strong>不只是订货系统</strong><p>连接采购、账单、库存、运营和数据分析。</p></article>
+          <article><strong>AI 用在真实问题上</strong><p>识别账单、分析采购、发现异常和生成经营洞察。</p></article>
+          <article><strong>对新开店特别友好</strong><p>从供应商到卫生文件，帮助新店少走弯路。</p></article>
+          <article><strong>为真实经营者设计</strong><p>面向老板、店长、采购负责人，而不是只给技术人员。</p></article>
+        </div>
+      </section>
+
+      <section class="final-cta" id="register">
+        <h2>从第一个供应商、第一张账单、第一笔订单开始。</h2>
+        <p>KaiSpan 不要求你一次性改变所有流程。先免费使用 KaiSpan Base，再逐步扩展。</p>
+        <div class="button-row center">
+          <a class="btn btn-primary" href="#base">免费注册 KaiSpan Base</a>
+          <a class="btn btn-secondary" href="#features" data-i18n="demoCta">查看功能</a>
+          <a class="btn btn-secondary" href="#opening">我正在准备开店</a>
+        </div>
+      </section>
+
+      <section class="section partner" id="partner">
+        <div>
+          <p class="eyebrow">Partner Integration</p>
+          <h2>Connect your ERP, Kasse, accounting or product data system with KaiSpan.</h2>
+          <p>KaiSpan API 开放。你的 Kasse、ERP、库存系统或做账软件可以与 KaiSpan 衔接，进行数据读取、处理和经营分析。</p>
+        </div>
+        <div class="partner-actions">
+          <a class="btn btn-secondary" href="#contact">与 KaiSpan 合作</a>
+        </div>
+      </section>
+
+      <section class="trust-badges" id="trust">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="trustBadgesEyebrow">Security &amp; Trust</p>
+          <h2 data-i18n="trustBadgesTitle">安全、透明、为德国和欧洲市场设计</h2>
+          <p data-i18n="trustBadgesIntro">KaiSpan 从一开始就重视数据托管、加密连接和 DSGVO 原则。</p>
+        </div>
+        <div class="trust-badge-grid">
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="2"></rect><rect x="4" y="14" width="16" height="6" rx="2"></rect><path d="M8 7h.01M8 17h.01M12 10v4"></path></svg>
+            </div>
+            <h3 data-i18n="trustBadge1Title">德国 / 欧盟服务器托管</h3>
+            <p data-i18n="trustBadge1Sub">Datenhosting in Deutschland / EU</p>
+            <small data-i18n="trustBadge1Text">数据托管于德国 / 欧盟服务器环境。</small>
+          </article>
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            </div>
+            <h3 data-i18n="trustBadge2Title">按 GDPR / DSGVO 原则设计</h3>
+            <p data-i18n="trustBadge2Sub">DSGVO-orientiert</p>
+            <small data-i18n="trustBadge2Text">按照 GDPR / DSGVO 原则设计数据处理流程。</small>
+          </article>
+          <article class="trust-card">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14v2"></path></svg>
+            </div>
+            <h3 data-i18n="trustBadge3Title">SSL / HTTPS 加密连接</h3>
+            <p data-i18n="trustBadge3Sub">SSL / HTTPS verschlüsselt</p>
+            <small data-i18n="trustBadge3Text">全站采用加密连接，保护数据传输安全。</small>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-brand">
+        <span class="logo-mark-css" aria-hidden="true"></span>
+        <strong>KaiSpan</strong>
+        <p>餐饮与零售企业的 AI 运营助手。</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#opening">Opening Guide</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#partner">Partner Integration</a><a href="#contact">Contact</a><a href="#imprint">Imprint</a>
+      </div>
+    </footer>
+
+    <dialog id="demoDialog">
+      <button class="close-dialog" aria-label="Close">×</button>
+      <h3 id="dialogTitle">Demo</h3>
+      <div class="dialog-video">Video placeholder</div>
+      <p>Coming Soon. Upload or embed a product walkthrough URL here.</p>
+    </dialog>
+
+    <script src="script.js?v=27"></script>
+  </body>
+</html>
