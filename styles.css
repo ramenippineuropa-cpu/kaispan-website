@@ -1,9 +1,9 @@
 @import url("https://cdn.jsdelivr.net/gh/ramenippineuropa-cpu/kaispan-website@29e4ba60539316f100965a3022c9c25e66e1739b/styles.css");
 .logo-mark-css{
-    border-radius:50%!important;
-    background:
-          radial-gradient(circle,transparent 0 13px,rgba(0,0,0,.45) 14px 17px,transparent 18px),
-          conic-gradient(from 220deg,#f8fbfd,#8b949b,#1d2329,#f4f6f7,#6f777f,#fdfefe,#252b31,#b9c0c5,#f7fafc)!important;
-    box-shadow:inset 0 1px 2px rgba(255,255,255,.8),0 2px 8px rgba(15,23,42,.16)!important;
+      border-radius:50%!important;
+      background:conic-gradient(from 225deg,#f7fafc,#8f969d,#20262c,#f9fbfc,#6e767e,#fdfefe,#252b31,#b8c0c6,#f7fafc)!important;
+      -webkit-mask:radial-gradient(circle,transparent 0 13px,#000 14px);
+      mask:radial-gradient(circle,transparent 0 13px,#000 14px);
+      box-shadow:inset 0 1px 2px rgba(255,255,255,.8),0 2px 8px rgba(15,23,42,.16)!important;
 }
 .footer-brand{align-items:center;}
